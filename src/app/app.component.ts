@@ -5,7 +5,7 @@ import {
   EventEmitter,
   OnInit,
 } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { UntypedFormGroup, UntypedFormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -13,10 +13,10 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit, AfterViewChecked {
-  constructor(private fb: FormBuilder, private cdr: ChangeDetectorRef) {}
+  constructor(private fb: UntypedFormBuilder, private cdr: ChangeDetectorRef) {}
 
   // Defaults
-  form!: FormGroup;
+  form!: UntypedFormGroup;
   students: any = [];
   searchTerm: string = '';
   reload: EventEmitter<boolean> = new EventEmitter();
